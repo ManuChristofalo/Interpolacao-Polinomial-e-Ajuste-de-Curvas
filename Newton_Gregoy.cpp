@@ -14,7 +14,6 @@ double fatorial(int N){
 	for (int i=N; i>0; i--){
 	cont1 = cont1*i;
 	}
-	printf("\nO fatorial de %d eh %lf\n", N, cont1);
 	return cont1;
 }
 
@@ -56,27 +55,24 @@ void Newton_Gregory(int n, double tabela[][max], int h , double x){
 	
 	//calcula s	
 	s = (x- X[0])/h;
-	printf("\ns vale: %lf\nO x vale: %lf\n", s, x);
 	//calcula deltas
 	for(i=n ; i>0 ; i--, t++){
 		Calcula_DY(Y, i, t);
 	}
-	t=4;
+	t=n;
 	printf("Vetor Y:\n");
 	for(i=0 ; i<n ; i++, t--){
 	for(j=0 ; j<t ; j++)
-	printf("%.0lf ", Y[i][j]);
+	printf("%.3lf ", Y[i][j]);
 	printf("\n");
 }
 	
 	polinomio = Y[0][0];
 	conts = 1;
-	printf("\nPolinomio: %lf\n",polinomio);
 	//para polinomio
 	for(i=0 ; i<n-1 ; i++){
 		conts *= (s-i);
 	polinomio += (conts*Y[i+1][0])/fatorial(i+1);
-	printf("\nPolinomio: %lf\nY[%d][0]: %lf\nconts: %lf\n",polinomio,i+1, Y[i+1][0], conts);
 	}
 	printf("\nO polinomio no ponto %lf vale: %lf\n", x, polinomio);
 }
