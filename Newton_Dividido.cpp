@@ -35,12 +35,11 @@ void Newton_Dividido(int n, double tabela[][max], double x){
 	
 	polinomio = Y[0][0];
 	contx = 1;
-	printf("\nO polinomio: %lf\nO contx vale: %lf\n", polinomio, contx);
 	//para polinomio
 	for(i=0 ; i<n-1 ; i++){
 	contx *= (x - X[i]);
 	polinomio += (contx*Y[i+1][0]);
-	//printf("\nO polinomio: %lf\nO contx vale: %lf\n", polinomio, contx);
+	printf("\nO polinomio: %lf\nO contx vale: %lf\n", polinomio, contx);
 	}
 	printf("\nO polinomio no ponto %lf vale: %lf\n", x, polinomio);
 }
@@ -49,8 +48,9 @@ void Newton_Dividido(int n, double tabela[][max], double x){
 int main (){
 	int n, grau, i;
 	double tabela[max][max], h, x;
+	while(true){
 	
-	printf("Digite a qtd de numeros tabelados: ");
+	printf("\n\nDigite a qtd de numeros tabelados: ");
 	scanf("%d", &n);
 	
 	printf("Digite os pontos tabelados em formato x|y\n");
@@ -63,6 +63,6 @@ int main (){
 	scanf("%lf", &x);
 	
 	Newton_Dividido(n, tabela, x);
-	
+}
 
 }
