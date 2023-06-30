@@ -17,16 +17,21 @@ double fatorial(int N){
 	return cont1;
 }
 
-int intervalo(double tabela[][max], int n){
-	int h, acho, hh, i;
+double intervalo(double tabela[][max], int n){
+	int acho, i;
+	double hh, h;
 	h = tabela[0][1] - tabela[0][0];
-		
+		printf("\nh : %lf\n", h);
 	for(i=1 ; i<n && acho==0 ; i++){
 		acho=0;
 		hh = tabela[0][i] - tabela[0][i-1];
-		if(h != hh)acho=1;
+		printf("\nhh : %lf\n", hh);
+		if(h - hh !=0){
+		acho=1;
+		printf("\nh e hh: %lf e %lf\n", h, hh);
+}
 	}
-	
+	printf("\nacho : %d\n",acho);	
 	if(acho == 1 )return 0;
 	if(acho == 0)return h;
 }
@@ -81,6 +86,7 @@ void Newton_Gregory(int n, double tabela[][max], int h , double x){
 int main (){
 	int n, grau, i;
 	double tabela[max][max], h, x;
+	while(true){
 	
 	printf("Digite a qtd de numeros tabelados: ");
 	scanf("%d", &n);
@@ -94,10 +100,11 @@ int main (){
 	printf("Digite o ponto a ser calculado: ");
 	scanf("%lf", &x);
 	
-	h = intervalo(tabela, n); 
-	
+//	h = intervalo(tabela, n); 
+h = tabela[0][1] - tabela[0][0];
+	printf("\nmain h: %lf\n", h);
 	if(h!=0)
 	Newton_Gregory(n, tabela, h, x);
-	
+}
 
 }
