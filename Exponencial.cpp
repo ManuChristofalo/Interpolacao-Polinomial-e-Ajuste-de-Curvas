@@ -70,7 +70,8 @@ void FY_ajusteExpo (double Y_ajustado[], double a0, double a1, double X[], int  
 void mostra(double a0, double a1, double Y_ajustado[], int n){
 	int i;
 	
-	printf("\na0 = %.4lf\na1 = %.4lf\n\n", a0, a1);
+	printf("\na0 = %.4lf\na1 = %.4lf\n", a0, a1);
+	printf("\nY = ab^x\nY = %.4lf * %.4lf^x\n\n", a0, a1);
 	printf("Vetor Y ajusatado exponencial:\n");
 	for(i=0 ; i<n ; i++)
 	printf("%.4lf ", Y_ajustado[i]);
@@ -158,7 +159,7 @@ int main (){
 	for(i=0 ; i<n ; i++)
 	printf("%.0lf ", tabela[0][i]);
 	
-	printf("\nVetor Y exponencial:\n\n");
+	printf("\nVetor Y exponencial:\n");
 	for(i=0 ; i<n ; i++)
 	printf("%.0lf ", tabela[1][i]);
 	
