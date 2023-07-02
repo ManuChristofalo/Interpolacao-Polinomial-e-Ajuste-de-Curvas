@@ -80,7 +80,7 @@ void Newton_Gregory(int n, double tabela[][max], int h , double x){
 		conts *= (s-i);
 	polinomio += (conts*Y[i+1][0])/fatorial(i+1);
 	}
-	printf("\nO polinomio no ponto %.0lf vale: %.4lf\n", x, polinomio);
+	printf("\nO polinomio no ponto %lf vale: %.4lf\n", x, polinomio);
 }
 	
 
