@@ -44,6 +44,9 @@ void mostra(double a0, double a1, double Y_ajustado[], int n){
 	
 	printf("\na0 = %.4lf\na1 = %.4lf\n\n", a0, a1);
 	printf("Vetor Y ajusatado reta:\n");
+
+	printf("Y = %.4lf + %.4lf*x\n\n", a0, a1);
+
 	for(i=0 ; i<n ; i++)
 	printf("%.4lf ", Y_ajustado[i]);
 	
